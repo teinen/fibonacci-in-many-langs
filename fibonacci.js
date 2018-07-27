@@ -1,7 +1,10 @@
 // memoize value
 var fibs = {}
+var count = 0
 
 function fib(n) {
+  count += 1
+
   if (fibs[n]) {
     return fibs[n]
   } else if (n <= 1) {
@@ -14,3 +17,5 @@ function fib(n) {
 for (let i = 0; i < 30; i++) {
   console.log(fib(i))
 }
+
+console.log(count + " called.")
