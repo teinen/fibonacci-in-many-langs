@@ -1,12 +1,29 @@
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Fibonacci {
   public static void main(String[] args) {
-    for (int i = 0; i < 10; i++) {
-      System.out.println(fibonacci(i));
-    }
+    // memoize
+    Map<Integer, BigInteger> values = new HashMap<>();
+
+    System.out.println(fibonacci(100, values));
   }
 
-  public static long fibonacci(int n) {
-    if (n <= 1) return n;
-    else return fibonacci(n - 1) + fibonacci(n - 2);
+  public static BigInteger fibonacci(Integer n, Map<Integer, BigInteger> values) {
+    if (values.containsKey(n)) {
+      return values.get(n);
+
+    } else if (n == 0) {
+      return BigInteger.ZERO;
+
+    } else if (n == 1) {
+      return BigInteger.ONE;
+
+    } else {
+      BigInteger fib = fibonacci(n - 1, values).add(fibonacci(n - 2, values));
+      values.put(n, fib);
+      return fib;
+    }
   }
 }
