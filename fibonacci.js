@@ -1,21 +1,14 @@
-// memoize value
+// memoize
 var fibs = {}
-var count = 0
 
+// fibonacci function
 function fib(n) {
-  count += 1
-
-  if (fibs[n]) {
-    return fibs[n]
-  } else if (n <= 1) {
-    return 1
-  } else {
-    return fibs[n] = fib(n - 1) + fib(n - 2)
-  }
+  if (n === 0) return 0
+  if (n === 1) return 1
+  if (fibs[n]) return fibs[n]
+  return fibs[n] = fib(n-1) + fib(n-2)
 }
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 50; i++) {
   console.log(fib(i))
 }
-
-console.log(count + " called.")
