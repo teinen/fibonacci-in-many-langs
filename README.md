@@ -7,5 +7,4 @@
 * [Java](https://github.com/teinen/fibonacci-in-many-langs/blob/master/Fibonacci.java)
 * [Ruby](https://github.com/teinen/fibonacci-in-many-langs/blob/master/fibonacci.rb)
 * [Go](https://github.com/teinen/fibonacci-in-many-langs/blob/master/fibonacci.go)
-* [Elm]()
-* [Kotlin]()
+* [Kotlin](https://github.com/teinen/fibonacci-in-many-langs/blob/master/fibonacci.kt)
